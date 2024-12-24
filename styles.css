@@ -1,0 +1,445 @@
+/* Light Mode Styles */
+* {
+    border: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0; /* Ensure no default margin */
+    min-height: 100vh; /* Ensure body covers full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mukta', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    color: #333;
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+    background-color: whitesmoke;
+    border-radius: 20px; /* Increased from 5px to 20px for smoother curves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(0, 0, 255, 0.2) inset;
+    /* Glow border */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.container h1 {
+    line-height: 130%;
+    color: #0366d6;
+}
+
+h1 {
+    text-align: center; /* Changed from left to center for symmetric alignment */
+    font-size: 50px;
+    padding: 10px 0 0px 0;
+    color: #333;
+    border-bottom: 1px solid #e1e4e8;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+span {
+    color: #58a6ff;
+    font-weight: 500;
+}
+
+p {
+    margin: 55px 0 20px 0;
+    border: 1px solid black;
+    border-radius: 15px; /* Increased from 10px to 15px for a more modern appearance */
+    padding: 10px 50px 5px 50px;
+    height: 40px;
+    color: #333;
+    background-color: white;
+    font-size: 1.5rem;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Button Styles */
+button {
+    /* Reduce padding for a slimmer look */
+    padding: 10px 40px;
+    /* Change width to auto for better sizing */
+    width: auto;
+    /* Add subtle box-shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adjust margin for balanced spacing */
+    margin: 20px auto;
+    /* Ensure consistent font styling */
+    font-size: 20px;
+    color: #fff; /* White text for better contrast */
+    background-color: #0366d6; /* Blue background */
+    border: none;
+    border-radius: 20px; /* Increased from 8px to 20px for a sleek look */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+    display: block; /* Ensure the button is displayed */
+}
+
+/* Hover Effects for Button */
+button:hover {
+    /* Enhance hover background color */
+    background-color: #025cb9;
+    /* Maintain text color */
+    color: #fff;
+    /* Add a slight scaling effect */
+    transform: scale(1.05);
+    /* Enhance box-shadow on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 20px; /* Maintain consistent border-radius on hover */
+}
+
+.custom-notification {
+    position: fixed;
+    color: white;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ea44f;
+    padding: 10px;
+    border-radius: 10px; /* Increased for a more polished notification */
+    z-index: 1000;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+#strength-indicator {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#strength-bar {
+    width: 0%;
+    height: 10px;
+    background-color: red;
+    border-radius: 5px;
+    transition: width 0.6s ease, background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+#strength-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+i {
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+i:hover {
+    transform: rotate(20deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for Options and Length Control */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Adjust options layout */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Consolidated .switch class */
+.switch {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    width: 60px;
+}
+
+.length-control label {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.6s ease, box-shadow 0.6s ease;
+}
+
+#lengthInput {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 15px; /* Added for smoother input edges */
+}
+
+#length-value {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px; /* Added to match the overall design */
+    transition: color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 256px;
+    }
+
+    p {
+        position: relative;
+    }
+
+    button {
+        margin: 50px 0px 50px -31px;
+        width: 123%;
+    }
+
+    .options, .length-control {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .switch {
+        width: 80%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .length-control {
+        flex-direction: column;
+    }
+
+    .length-control label, #lengthInput, #length-value {
+        width: 80%;
+        margin: 5px 0;
+    }
+}
+
+/* Responsive Adjustments for Larger Tablets and Desktops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 400px;
+        height: 450px;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 1.3rem;
+        padding: 10px 40px 5px 40px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 30px;
+    }
+
+    .length-control label, #length-value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Adjustments for Smartphone Screens */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        padding: 8px 20px 4px 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 20px;
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .switch {
+        width: 100%;
+    }
+
+    .length-control {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #lengthInput {
+        width: 70%;
+    }
+
+    #length-value {
+        width: 30px;
+    }
+
+    #strength-indicator {
+        margin-top: 15px;
+    }
+
+    .custom-notification {
+        width: 90%;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    i {
+        bottom: 30px;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    color: #c9d1d9;
+}
+
+.dark .container {
+    background-color: #161b22;
+    box-shadow: 
+        0 4px 15px rgba(255, 255, 255, 0.2), /* Outer glow */
+        0 0 25px rgba(88, 166, 255, 0.4) inset; /* Enhanced inner glow */
+    border: 2px solid rgba(88, 166, 255, 0.5); /* Subtle glowing border */
+}
+
+.dark .container h1,
+.dark h1,
+.dark p,
+.dark #strength-text,
+.dark button,
+.dark .label-text,
+.dark .options label,
+.dark #strength-bar,
+.dark .custom-notification {
+    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.dark .container h1 {
+    color: #c9d1d9;
+}
+
+.dark h1 {
+    color: #c9d1d9;
+    border-bottom: 1px solid #30363d;
+}
+
+.dark p {
+    color: #c9d1d9;
+    background-color: #273549;
+}
+
+.dark #strength-text {
+    color: #c9d1d9;
+}
+
+.dark button {
+    color: #fff;
+    background-color: #58a6ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dark button:hover {
+    color: #fff;
+    background-color: #025cb9;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dark .custom-notification {
+    background-color: #0366d6;
+}
+
+.dark .label-text {
+    color: #c9d1d9;
+}
+
+.dark .slider::before {
+    display: none;
+}
+
+/* Add dark mode styles for additional elements */
+
+.dark .controls {
+    background-color: #161b22;
+}
+
+.dark .switch .slider {
+    background-color: #555;
+    border-radius: 30px; /* Fully rounded switches for a modern feel */
+}
+
+.dark .switch input:checked + .slider {
+    background-color: #0366d6;
+}
+
+.dark .length-control label,
+.dark .length-control #length-value {
+    color: #c9d1d9;
+}
+
+.dark .options label {
+    color: #c9d1d9;
+}
+
+.dark #strength-bar {
+    background-color: red; /* Adjust as needed for dark mode */
+}
+
+.dark .fa-moon,
+.dark .fa-sun {
+    color: #c9d1d9;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Ensure toggle icons display correctly */
+body.dark #moonIcon {
+    display: none;
+}
+
+body.dark #modeIcon {
+    display: inline;
+}
