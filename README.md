@@ -3,6 +3,8 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -12,23 +14,42 @@
 The Password Generator is a web application that allows users to generate strong and secure passwords. It offers various customization options to include uppercase letters, lowercase letters, numbers, and symbols in the generated password.
 
 ## Features
-- Generate passwords with customizable length
-- Options to include uppercase letters, lowercase letters, numbers, and symbols
-- Password strength indicator
-- Copy password to clipboard
-- Dark mode support
+- **Generate Passwords with Customizable Length:** Users can specify the desired length of the password using a convenient slider, allowing for flexibility based on security needs.
+- **Include Uppercase Letters:** Option to include uppercase alphabets (A-Z) in the generated password, enhancing complexity.
+- **Include Lowercase Letters:** Option to include lowercase alphabets (a-z) in the generated password, ensuring a mix of character cases.
+- **Include Numbers:** Option to include numeric characters (0-9) in the password, adding an extra layer of security.
+- **Include Symbols:** Option to include special symbols (e.g., !, @, #, $) in the password, increasing its unpredictability.
+- **Password Strength Indicator:** Visual feedback that assesses the strength of the generated password based on length and character variety, categorized as Weak, Moderate, or Strong.
+- **Copy Password to Clipboard:** Easily copy the generated password to the clipboard with a single click for convenient use.
+- **Dark Mode Support:** Toggle between light and dark themes to enhance user experience based on preference or ambient lighting conditions.
+
+## Technologies Used
+
+- **HTML5:** Structure and layout of the web application.
+- **CSS3:** Styling and responsive design.
+- **JavaScript:** Functionality and interactivity.
+- **Font Awesome:** Icons for UI elements.
+- **Google Fonts:** Custom fonts for enhanced typography.
+
+## Screenshots
+
+![Password Generator Desktop](https://github.com/user-attachments/assets/101ec598-16e8-416d-a3b6-fe196574e43b)
+*Desktop view of the Password Generator.*
+
+![Password Generator Dark Mode](https://github.com/user-attachments/assets/b3c77e70-0211-4d27-9005-ed0e4c1b59b6)
+*Password Generator in Dark Mode.*
 
 ## Installation
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-```bash
-git clone https://github.com/ALOK-CST/Password-Generator.git
- ```
+    ```bash
+    git clone https://github.com/ALOK-CST/Password-Generator.git
+    ```
 2. Navigate into the project directory:
-```bash
-cd Password-Generator
-```
+    ```bash
+    cd Password-Generator
+    ```
 
 ## Usage
 
