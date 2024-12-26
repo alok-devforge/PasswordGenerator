@@ -108,4 +108,3 @@ document.addEventListener("DOMContentLoaded", () => {
   generateButton.addEventListener("click", () => generatePassword());
 
 });
->>>>>>> main
