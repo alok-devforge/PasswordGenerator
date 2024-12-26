@@ -17,33 +17,31 @@
 <body>
     <div class="container">
         <h1 id="main-heading">Crank out a mighty<br><span>Password 🔒</span></h1>
-        <p id="pass-el"></p>
-        <div id="strength-indicator">
-            <div id="strength-bar"></div>
+        <p id="pass-el" aria-live="polite" aria-atomic="true"></p>
+        <button id="copy-button" class="copy-button" style="display: none;" aria-label="Copy Password">Copy Password
+            📋</button>
+        <div id="strength-indicator" aria-label="Password Strength">
+            <div id="strength-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
             <span id="strength-text">Strength: </span>
         </div>
         <div class="controls">
             <div class="options">
-                <label class="switch">
-                    <input type="checkbox" id="includeUpper" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Uppercase</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeLower" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Lowercase</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeNumbers" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Numbers</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeSymbols" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Symbols</span>
-                </label>
+                <div class="toggle-group">
+                    <span class="toggle-label">Uppercase</span>
+                    <button class="toggle-button active" id="toggleUpper"></button>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Lowercase</span>
+                    <button class="toggle-button active" id="toggleLower"></button>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Numbers</span>
+                    <button class="toggle-button active" id="toggleNumbers"></button>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Symbols</span>
+                    <button class="toggle-button active" id="toggleSymbols"></button>
+                </div>
             </div>
             <div class="length-control">
                 <label for="lengthInput">Length:</label>
@@ -51,7 +49,7 @@
                 <span id="length-value">15</span>
             </div>
         </div>
-        <button id="generate-button">Generate Password 🗝️</button>
+        <button id="generate-button" aria-label="Generate Password">Generate Password 🗝️</button>
         <i class="fa-solid fa-moon fa-2xl" id="moonIcon"></i>
         <i class="fa-solid fa-sun fa-2xl" id="modeIcon" style="display: none;"></i>
     </div>
