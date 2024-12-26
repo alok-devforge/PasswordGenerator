@@ -1,0 +1,672 @@
+/* Light Mode Styles */
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Added for better sizing control */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    /* Ensure no default margin */
+    min-height: 100vh;
+    /* Ensure body covers full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mukta', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    /* Changed from fixed width to full width */
+    max-width: 400px;
+    /* Ensures the container doesn't exceed 300px */
+    margin: 0 5px;
+    /* Adds horizontal margins for spacing */
+    padding: 15px;
+    /* Reduced padding from 50px */
+    background-color: whitesmoke;
+    border-radius: 10px;
+    /* Reduced border-radius for smaller box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* Glow border */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Prevent content from spilling out */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    line-height: 130%;
+    color: #0366d6;
+    font-size: 1.5rem;
+    /* Reduced font size */
+    text-align: center;
+    /* Already set */
+    padding: 10px 0 10px 0;
+    /* Adjusted bottom padding for better spacing */
+}
+
+h1 {
+    text-align: center;
+    /* Center alignment */
+    font-size: 1.5rem;
+    /* Reduced from 50px */
+    padding: 10px 0 10px 0;
+    /* Adjusted bottom padding for better spacing */
+    color: #333;
+    border-bottom: 1px solid #e1e4e8;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+span {
+    color: #58a6ff;
+    font-weight: 500;
+}
+
+p {
+    margin: 20px 0 10px 0;
+    /* Reduced margins */
+    border: 1px solid black;
+    border-radius: 10px;
+    /* Reduced border-radius */
+    padding: 8px 30px 4px 30px;
+    /* Reduced padding */
+    height: 30px;
+    /* Reduced height */
+    color: #333;
+    background-color: white;
+    font-size: 1.2rem;
+    /* Reduced font size */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+p#pass-el {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Center the text */
+    width: 100%;
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+ /* Button Styles */
+button {
+    padding: 8px 30px;
+    /* Reduced padding */
+    width: 100%;
+    /* Set button to full width of its container */
+    max-width: 250px;
+    /* Limit maximum width for larger screens */
+    margin: 10px auto;
+    /* Center the button horizontally */
+    font-size: 1rem;
+    /* Reduced font size */
+    color: #fff;
+    /* Contrast */
+    background-color: #0366d6;
+    /* Blue background */
+    border: none;
+    border-radius: 15px;
+    /* Reduced border-radius */
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    /* Displayed */
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#generate-button {
+    width: 100%;
+    /* Full width within container */
+    max-width: 250px;
+    /* Consistent with other buttons */
+    margin: 15px auto;
+    /* Center horizontally */
+}
+
+.custom-notification {
+    position: fixed;
+    color: white;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #323232;
+    /* Changed background color for better visibility */
+    color: #fff;
+    /* Ensured text color is white for contrast */
+    padding: 12px 20px;
+    /* Increased padding for better readability */
+    border-radius: 5px;
+    /* Adjusted border-radius for a sleeker look */
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    /* Center the notification text */
+    opacity: 0;
+    animation: fadeInOut 2s forwards;
+}
+
+#strength-indicator {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#strength-bar {
+    width: 0%;
+    height: 12px;
+    /* Increased height for better visibility */
+    background-color: red;
+    border-radius: 6px;
+    /* More rounded corners */
+    transition: width 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#strength-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+i {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+i:hover {
+    transform: rotate(20deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+i#moonIcon,
+i#modeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for Options and Length Control */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px;
+    /* Consistent spacing */
+}
+
+/* Toggle Group Styles */
+.options {
+    display: flex;
+    flex-direction: column;
+    /* Column layout for symmetry */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Reduced gap */
+    width: 100%;
+    margin-bottom: 15px;
+    /* Reduced margin */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Ensure even spacing */
+    width: 80%;
+    /* Fit within container */
+    max-width: 250px;
+    /* Reduced max-width from 300px */
+    width: 100%;
+}
+
+.toggle-label {
+    margin-right: 10px;
+    /* Reduced spacing */
+    font-size: 0.9rem;
+    /* Reduced font size */
+    color: #333;
+    width: 100px;
+    /* Adjusted width */
+    text-align: right;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+    position: relative;
+    width: 40px;
+    /* Reduced width from 50px */
+    height: 20px;
+    /* Reduced height from 24px */
+    background-color: #ccc;
+    border-radius: 10px;
+    /* Reduced border-radius */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+    outline: none;
+}
+
+.toggle-button::after {
+    display: none;
+}
+
+.toggle-button::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    /* Reduced width */
+    height: 16px;
+    /* Reduced height */
+    background-color: #fff;
+    border-radius: 50%;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* Active State */
+.toggle-button.active {
+    background-color: #025cb9;
+}
+
+.toggle-button.active::before {
+    transform: translateX(20px);
+    /* Adjusted translation */
+}
+
+.label-text {
+    display: none;
+}
+
+/* Length Control Styles */
+.length-control {
+    display: flex;
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    gap: 10px;
+    /* Consistent spacing */
+    width: 100%;
+}
+
+#lengthInput {
+    width: 60%;
+    /* Consistent width */
+}
+
+#length-value {
+    width: 25px;
+    /* Consistent width */
+    text-align: center;
+}
+
+/* Copy Button Styles */
+.copy-button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #0366d6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Removed transform transition */
+}
+
+.copy-button:hover {
+    background-color: #025cb9;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        /* Responsive width */
+        padding: 20px;
+        /* Reduced padding */
+    }
+
+    p {
+        position: relative;
+    }
+
+    button {
+        margin: 15px 0;
+        /* Reduced margin */
+        width: 80%;
+        /* Adjust button width for medium screens */
+        max-width: 200px;
+        /* Reduced max-width */
+    }
+
+    .options,
+    .length-control {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toggle-group {
+        width: 100%;
+        justify-content: space-between;
+        max-width: 220px;
+        /* Reduced max-width for better fit */
+    }
+
+    .toggle-label {
+        width: 90px;
+        /* Adjusted width */
+        text-align: right;
+    }
+
+    .length-control {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #lengthInput {
+        width: 80%;
+    }
+
+    #generate-button {
+        width: 80%;
+        /* Match button width */
+        max-width: 200px;
+    }
+
+    #strength-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        /* Ensures full width on very small screens */
+        margin: 0 10px;
+        /* Reduces horizontal margins */
+        padding: 15px;
+        /* Further reduced padding */
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        /* Further reduced font size */
+    }
+
+    p {
+        font-size: 1rem;
+        /* Further reduced font size */
+        padding: 6px 15px 3px 15px;
+        /* Further reduced padding */
+    }
+
+    button {
+        font-size: 0.9rem;
+        /* Further reduced font size */
+        padding: 6px 15px;
+        /* Further reduced padding */
+        width: 100%;
+        /* Full width on small screens */
+        max-width: none;
+        /* Remove max-width */
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+        /* Reduced gap */
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toggle-group {
+        width: 100%;
+        justify-content: space-between;
+        max-width: 180px;
+        /* Further reduced max-width */
+    }
+
+    .toggle-label {
+        width: 80px;
+        /* Further reduced width */
+        text-align: right;
+    }
+
+    .toggle-button {
+        width: 35px;
+        /* Further reduced width */
+        height: 18px;
+        /* Further reduced height */
+    }
+
+    .toggle-button::before {
+        width: 14px;
+        /* Further reduced width */
+        height: 14px;
+        /* Further reduced height */
+    }
+
+    .toggle-button.active::before {
+        transform: translateX(18px);
+        /* Adjusted translation */
+    }
+
+    #lengthInput {
+        width: 100%;
+    }
+
+    #length-value {
+        width: 25px;
+        /* Reduced width */
+    }
+
+    #strength-indicator {
+        margin-top: 10px;
+        /* Reduced margin */
+    }
+
+    .custom-notification {
+        width: 85%;
+        padding: 6px;
+        /* Further reduced padding */
+        font-size: 0.8rem;
+        /* Further reduced font size */
+    }
+
+    i {
+        bottom: 25px;
+        /* Further reduced position */
+        right: 15px;
+        /* Further reduced position */
+        font-size: 1.2rem;
+        /* Further reduced icon size */
+    }
+
+    #generate-button {
+        width: 100%;
+        /* Full width on small screens */
+        max-width: none;
+    }
+
+    #strength-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    color: #c9d1d9;
+}
+
+.dark .container {
+    background-color: #161b22;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(88, 166, 255, 0.5);
+    /* Subtle glowing border */
+}
+
+.dark .container h1,
+.dark h1,
+.dark p,
+.dark #strength-text,
+.dark button,
+.dark .label-text,
+.dark .options label,
+.dark #strength-bar,
+.dark .custom-notification {
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .container h1 {
+    color: #c9d1d9;
+}
+
+.dark h1 {
+    color: #c9d1d9;
+    border-bottom: 1px solid #30363d;
+}
+
+.dark p {
+    color: #c9d1d9;
+    background-color: #273549;
+}
+
+.dark #strength-text {
+    color: #c9d1d9;
+}
+
+.dark button {
+    color: #fff;
+    background-color: #58a6ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dark button:hover {
+    color: #fff;
+    background-color: #025cb9;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dark .custom-notification {
+    background-color: #0366d6;
+}
+
+.dark .label-text {
+    color: #c9d1d9;
+}
+
+.dark .controls {
+    background-color: #161b22;
+}
+
+.dark .length-control label,
+.dark .length-control #length-value {
+    color: #c9d1d9;
+}
+
+.dark .options label {
+    color: #c9d1d9;
+}
+
+.dark #strength-bar {
+    background-color: red;
+    /* Adjust as needed for dark mode */
+}
+
+.dark .fa-moon,
+.dark .fa-sun {
+    color: #c9d1d9;
+}
+
+.dark .toggle-label {
+    color: #c9d1d9;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Ensure toggle icons display correctly */
+body.dark #moonIcon {
+    display: none;
+}
+
+body.dark #modeIcon {
+    display: inline;
+}
+
+/* Accessibility Enhancements */
+.toggle-button:focus {
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.5);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.5);
+}
+
+/* Notification Animation */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
