@@ -39,37 +39,95 @@ The Password Generator is a web application that allows users to generate strong
 ![Password Generator Dark Mode](https://github.com/user-attachments/assets/b3c77e70-0211-4d27-9005-ed0e4c1b59b6)
 *Password Generator in Dark Mode.*
 
-## Installation
-To run this project locally, follow these steps:
 
-1. Clone the repository:
+## Installation
+
+To set up this project locally, follow these steps:
+
+1. **Clone the Repository:**
     ```bash
     git clone https://github.com/ALOK-CST/Password-Generator.git
     ```
-2. Navigate into the project directory:
+2. **Navigate to the Project Directory:**
     ```bash
     cd Password-Generator
     ```
+3. **Open `index.html` in Your Browser:**
+    - **Option 1:** Double-click the `index.html` file to open it directly in your default web browser.
+    - **Option 2:** Serve the project using a local development server for enhanced functionality:
+        ```bash
+        # Using Python's Simple HTTP Server
+        python -m http.server 8000
+        ```
+        Then, navigate to [http://localhost:8000](http://localhost:8000) in your browser.
+    
+4. **Ensure Internet Connectivity:**
+    - The project utilizes external resources like Font Awesome and Google Fonts. Ensure you have an active internet connection to load these assets properly.
 
 ## Usage
 
-Open the index.html file in your web browser to use the Password Generator.
-### Generating a Password
-1. **Adjust the length of the password using the length slider.**
-2. **Select the character types to include in the password (uppercase, lowercase, numbers, symbols).**
-3. **Click the "Generate Password" button.**
-4. **The generated password will be displayed and automatically copied to the clipboard.**
-5. **The strength of the password will be indicated by the strength indicator.**
+1. **Set Password Length:**
+    - Adjust the slider under the "Length" section to choose a password length between 4 and 30 characters.
+
+2. **Select Character Types:**
+    - Toggle the buttons for **Uppercase**, **Lowercase**, **Numbers**, and **Symbols** to include or exclude these character sets in your password.
+
+3. **Generate Password:**
+    - Click the **"Generate Password 🗝️"** button.
+    - The generated password will appear in the display area below the heading.
+    - The strength indicator will update to reflect the strength of the generated password.
+
+4. **Copy Password:**
+    - Click the **"Copy Password 📋"** button to copy the generated password to your clipboard for easy use.
+
+5. **Toggle Dark Mode:**
+    - Click the moon icon to switch to Dark Mode.
+    - Click the sun icon to revert to Light Mode.
 
 ## Contributing
 
-### Contributions are welcome!
+Contributions are welcome! To contribute to the Password Generator project, please follow these guidelines:
 
-1. **Fork the repository.**
-2. **Create a new branch.**
-3. **Commit your changes and create a pull request.**
+1. **Fork the Repository:**
+    - Click the **"Fork"** button at the top right corner of the repository page to create a personal copy of the project.
 
----
+2. **Clone Your Fork:**
+    ```bash
+    git clone https://github.com/your-username/Password-Generator.git
+    ```
+3. **Navigate to the Project Directory:**
+    ```bash
+    cd Password-Generator
+    ```
+4. **Create a New Branch:**
+    - Use a descriptive name for your branch related to the feature or fix you're implementing.
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+5. **Implement Your Changes:**
+    - Make your desired changes or additions in your local environment.
+
+6. **Commit Your Changes:**
+    ```bash
+    git add .
+    git commit -m "Add [description of your changes]"
+    ```
+
+7. **Push to Your Fork:**
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+8. **Create a Pull Request:**
+    - Navigate to your fork on GitHub.
+    - Click the **"Compare & pull request"** button.
+    - Provide a clear and concise description of your changes.
+    - Submit the pull request for review.
+
+**Please Ensure That:**
+- Your code adheres to the existing code style and best practices.
+- You have thoroughly tested your changes.
+- You have updated the documentation if your changes affect it.
 
 ## License
 
