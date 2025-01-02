@@ -48,11 +48,15 @@
                 <input id="lengthInput" type="range" min="4" max="30" value="15" />
                 <span id="length-value">15</span>
             </div>
+            <!-- Moved Dark Mode toggle-group to center -->
+            <div class="toggle-group centered">
+                <span class="toggle-label">Dark Mode</span>
+                <button class="toggle-button" id="toggleMode"></button>
+            </div>
         </div>
         <button id="generate-button" aria-label="Generate Password">Generate Password 🗝️</button>
-        <i class="fa-solid fa-moon fa-2xl" id="moonIcon"></i>
-        <i class="fa-solid fa-sun fa-2xl" id="modeIcon" style="display: none;"></i>
     </div>
     <div id="notification-container"></div>
     <script src="script.js" defer></script>
 </body>
+</html>

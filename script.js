@@ -54,25 +54,36 @@ function updateStrengthIndicator(strength) {
   const strengthBar = document.getElementById("strength-bar");
   const strengthText = document.getElementById("strength-text");
   
-  let width;
-  switch(strength.level) {
-      case "Weak":
-          width = 33;
-          break;
-      case "Moderate":
-          width = 66;
-          break;
-      case "Strong":
-          width = 100;
-          break;
-      default:
-          width = 0;
-  }
+  // Reset strength bar to trigger the transition
+  strengthBar.style.width = '0%';
+  strengthBar.style.backgroundColor = 'transparent';
+  strengthText.textContent = `Strength: `;
+  
+  // Force reflow to restart the CSS transition
+  void strengthBar.offsetWidth;
+  
+  // Add a longer delay before setting the new strength to ensure the transition occurs
+  setTimeout(() => {
+      let width;
+      switch(strength.level) {
+          case "Weak":
+              width = 33;
+              break;
+          case "Moderate":
+              width = 66;
+              break;
+          case "Strong":
+              width = 100;
+              break;
+          default:
+              width = 0;
+      }
 
-  strengthBar.style.width = `${width}%`;
-  strengthBar.style.backgroundColor = strength.color;
-  strengthBar.setAttribute('aria-valuenow', width);
-  strengthText.textContent = `Strength: ${strength.level}`;
+      strengthBar.style.width = `${width}%`;
+      strengthBar.style.backgroundColor = strength.color;
+      strengthBar.setAttribute('aria-valuenow', width);
+      strengthText.textContent = `Strength: ${strength.level}`;
+  }, 100); // Increased delay to 100 milliseconds
 }
 
 function showNotification(message, duration) {
@@ -88,31 +99,12 @@ function showNotification(message, duration) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
-  const modeIcon = document.getElementById("modeIcon");
-  const moonIcon = document.getElementById("moonIcon");
 
-  // Initialize theme based on current class
-  if (body.classList.contains('dark')) {
-    modeIcon.style.display = 'none';
-    moonIcon.style.display = 'inline';
-  } else {
-    modeIcon.style.display = 'inline';
-    moonIcon.style.display = 'none';
-  }
-
-  function toggleMode() {
-    body.classList.toggle('dark');
-    if (body.classList.contains('dark')) {
-        modeIcon.style.display = 'none';
-        moonIcon.style.display = 'inline';
-    } else {
-        modeIcon.style.display = 'inline';
-        moonIcon.style.display = 'none';
-    }
-  }
-
-  moonIcon.addEventListener("click", toggleMode);
-  modeIcon.addEventListener("click", toggleMode);
+  const toggleMode = document.getElementById("toggleMode");
+  toggleMode.addEventListener("click", () => {
+      toggleMode.classList.toggle("active");
+      body.classList.toggle("dark");
+  });
 
   const lengthInput = document.getElementById("lengthInput");
   const lengthValue = document.getElementById("length-value");
