@@ -33,10 +33,10 @@ The Password Generator is a web application that allows users to generate strong
 
 ## Screenshots
 
-![Password Generator Desktop](https://github.com/user-attachments/assets/101ec598-16e8-416d-a3b6-fe196574e43b)
+![Password Generator Desktop](https://github.com/user-attachments/assets/6a5a1f8d-2bb1-4be3-973d-c92ee2b6fcae)
 *Desktop view of the Password Generator.*
 
-![Password Generator Dark Mode](https://github.com/user-attachments/assets/b3c77e70-0211-4d27-9005-ed0e4c1b59b6)
+![Password Generator Dark Mode](https://github.com/user-attachments/assets/d9e6e945-4641-4cb6-bed4-aa1d628a3447)
 *Password Generator in Dark Mode.*
 
 
