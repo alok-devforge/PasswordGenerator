@@ -185,11 +185,6 @@ button {
     transition: width 0.6s ease, background-color 0.6s ease;
 }
 
-/* Optional: Animation Class */
-#strength-bar.animate {
-    /* This class can be used if additional animation effects are desired */
-}
-
 #strength-text {
     display: block;
     margin-top: 5px;
