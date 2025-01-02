@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,76 +48,15 @@
                 <input id="lengthInput" type="range" min="4" max="30" value="15" />
                 <span id="length-value">15</span>
             </div>
+            <!-- Moved Dark Mode toggle-group to center -->
+            <div class="toggle-group centered">
+                <span class="toggle-label">Dark Mode</span>
+                <button class="toggle-button" id="toggleMode"></button>
+            </div>
         </div>
         <button id="generate-button" aria-label="Generate Password">Generate Password 🗝️</button>
-        <i class="fa-solid fa-moon fa-2xl" id="moonIcon"></i>
-        <i class="fa-solid fa-sun fa-2xl" id="modeIcon" style="display: none;"></i>
     </div>
     <div id="notification-container"></div>
     <script src="script.js" defer></script>
 </body>
-
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    <!-- Link to the combined styles.css -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="shortcut icon" href="logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container">
-        <h1 id="main-heading">Crank out a mighty<br><span>Password 🔒</span></h1>
-        <p id="pass-el"></p>
-        <div id="strength-indicator">
-            <div id="strength-bar"></div>
-            <span id="strength-text">Strength: </span>
-        </div>
-        <div class="controls">
-            <div class="options">
-                <label class="switch">
-                    <input type="checkbox" id="includeUpper" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Uppercase</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeLower" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Lowercase</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeNumbers" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Numbers</span>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" id="includeSymbols" checked>
-                    <span class="slider"></span>
-                    <span class="label-text">Symbols</span>
-                </label>
-            </div>
-            <div class="length-control">
-                <label for="lengthInput">Length:</label>
-                <input id="lengthInput" type="range" min="4" max="30" value="15" />
-                <span id="length-value">15</span>
-            </div>
-        </div>
-        <button id="generate-button">Generate Password 🗝️</button>
-        <i class="fa-solid fa-moon fa-2xl" id="moonIcon"></i>
-        <i class="fa-solid fa-sun fa-2xl" id="modeIcon" style="display: none;"></i>
-    </div>
-    <div id="notification-container"></div>
-    <script src="script.js" defer></script>
-</body>
-
->>>>>>> main
 </html>
