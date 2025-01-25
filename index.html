@@ -16,10 +16,11 @@
 
 <body>
     <div class="container">
-        <h1 id="main-heading">Crank out a mighty<br><span>Password 🔒</span></h1>
+        <h1 id="main-heading">Password Generator<br><span>Secure • Simple • Swift</span></h1>
         <p id="pass-el" aria-live="polite" aria-atomic="true"></p>
-        <button id="copy-button" class="copy-button" style="display: none;" aria-label="Copy Password">Copy Password
-            📋</button>
+        <button id="copy-button" class="copy-button" style="display: none;" aria-label="Copy Password">
+            <i class="fas fa-copy"></i> Copy Password
+        </button>
         <div id="strength-indicator" aria-label="Password Strength">
             <div id="strength-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
             <span id="strength-text">Strength: </span>
@@ -54,7 +55,9 @@
                 <button class="toggle-button" id="toggleMode"></button>
             </div>
         </div>
-        <button id="generate-button" aria-label="Generate Password">Generate Password 🗝️</button>
+        <button id="generate-button" aria-label="Generate Password">
+            <i class="fas fa-key"></i> Generate Password
+        </button>
     </div>
     <div id="notification-container"></div>
     <script src="script.js" defer></script>
