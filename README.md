@@ -5,6 +5,7 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Screenshots](#screenshots)
+- [Live Demo](#live-demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -32,13 +33,20 @@ The Password Generator is a web application that allows users to generate strong
 - **Google Fonts:** Custom fonts for enhanced typography.
 
 ## Screenshots
+![Password Generator Desktop](screenshots/desktop.png)
+*Desktop view of the Password Generator.*
 
+![Password Generator Dark Mode](screenshots/dark-mode.png)
+*Password Generator in Dark Mode.*
+
+## Live Demo
+
+Access the live version of the Password Generator [here](https://your-live-demo-link.com).
 ![Password Generator Desktop](https://github.com/user-attachments/assets/6a5a1f8d-2bb1-4be3-973d-c92ee2b6fcae)
 *Desktop view of the Password Generator.*
 
 ![Password Generator Dark Mode](https://github.com/user-attachments/assets/d9e6e945-4641-4cb6-bed4-aa1d628a3447)
 *Password Generator in Dark Mode.*
-
 
 ## Installation
 
