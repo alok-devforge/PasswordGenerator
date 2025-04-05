@@ -1,144 +1,88 @@
-# Password Generator
+# PasswordGenerator
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+
+## Description
+
+PasswordGenerator is a web application designed to generate strong, customizable passwords. Users can specify the length and character types, and the application provides a password strength indicator. It also features a dark mode for better user experience in low-light environments.
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
-- [Live Demo](#live-demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Introduction
-The Password Generator is a web application that allows users to generate strong and secure passwords. It offers various customization options to include uppercase letters, lowercase letters, numbers, and symbols in the generated password.
+- [PasswordGenerator](#passwordgenerator)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Demo](#demo)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Screenshots](#screenshots)
+  - [Contact](#contact)
 
 ## Features
-- **Generate Passwords with Customizable Length:** Users can specify the desired length of the password using a convenient slider, allowing for flexibility based on security needs.
-- **Include Uppercase Letters:** Option to include uppercase alphabets (A-Z) in the generated password, enhancing complexity.
-- **Include Lowercase Letters:** Option to include lowercase alphabets (a-z) in the generated password, ensuring a mix of character cases.
-- **Include Numbers:** Option to include numeric characters (0-9) in the password, adding an extra layer of security.
-- **Include Symbols:** Option to include special symbols (e.g., !, @, #, $) in the password, increasing its unpredictability.
-- **Password Strength Indicator:** Visual feedback that assesses the strength of the generated password based on length and character variety, categorized as Weak, Moderate, or Strong.
-- **Copy Password to Clipboard:** Easily copy the generated password to the clipboard with a single click for convenient use.
-- **Dark Mode Support:** Toggle between light and dark themes to enhance user experience based on preference or ambient lighting conditions.
 
-## Technologies Used
+- **Customizable Password Length**: Choose the length of the password according to your needs.
+- **Character Type Options**: Include uppercase, lowercase, numbers, and symbols in the password.
+- **Password Strength Indicator**: Visual feedback on the strength of the generated password.
+- **Dark Mode Support**: Toggle between light and dark themes for better user experience.
 
-- **HTML5:** Structure and layout of the web application.
-- **CSS3:** Styling and responsive design.
-- **JavaScript:** Functionality and interactivity.
-- **Font Awesome:** Icons for UI elements.
-- **Google Fonts:** Custom fonts for enhanced typography.
+## Demo
 
-## Screenshots
-![Password Generator Desktop](screenshots/desktop.png)
-*Desktop view of the Password Generator.*
-
-![Password Generator Dark Mode](screenshots/dark-mode.png)
-*Password Generator in Dark Mode.*
-
-## Live Demo
-
-Access the live version of the Password Generator [here](https://your-live-demo-link.com).
-![Password Generator Desktop](https://github.com/user-attachments/assets/6a5a1f8d-2bb1-4be3-973d-c92ee2b6fcae)
-*Desktop view of the Password Generator.*
-
-![Password Generator Dark Mode](https://github.com/user-attachments/assets/d9e6e945-4641-4cb6-bed4-aa1d628a3447)
-*Password Generator in Dark Mode.*
+You can try the application live here: [PasswordGenerator Demo](https://alok-devforge.github.io/PasswordGenerator/)
 
 ## Installation
 
-To set up this project locally, follow these steps:
+To set up the project locally, follow these steps:
 
-1. **Clone the Repository:**
+1. **Clone the repository**:
     ```bash
-    git clone https://github.com/ALOK-CST/Password-Generator.git
+    git clone https://github.com/alok-devforge/PasswordGenerator.git
+    cd PasswordGenerator
     ```
-2. **Navigate to the Project Directory:**
-    ```bash
-    cd Password-Generator
-    ```
-3. **Open `index.html` in Your Browser:**
-    - **Option 1:** Double-click the `index.html` file to open it directly in your default web browser.
-    - **Option 2:** Serve the project using a local development server for enhanced functionality:
-        ```bash
-        # Using Python's Simple HTTP Server
-        python -m http.server 8000
-        ```
-        Then, navigate to [http://localhost:8000](http://localhost:8000) in your browser.
-    
-4. **Ensure Internet Connectivity:**
-    - The project utilizes external resources like Font Awesome and Google Fonts. Ensure you have an active internet connection to load these assets properly.
+
+2. **Open the application**:
+   Open `index.html` in your preferred web browser to run the application.
 
 ## Usage
 
-1. **Set Password Length:**
-    - Adjust the slider under the "Length" section to choose a password length between 4 and 30 characters.
-
-2. **Select Character Types:**
-    - Toggle the buttons for **Uppercase**, **Lowercase**, **Numbers**, and **Symbols** to include or exclude these character sets in your password.
-
-3. **Generate Password:**
-    - Click the **"Generate Password 🗝️"** button.
-    - The generated password will appear in the display area below the heading.
-    - The strength indicator will update to reflect the strength of the generated password.
-
-4. **Copy Password:**
-    - Click the **"Copy Password 📋"** button to copy the generated password to your clipboard for easy use.
-
-5. **Toggle Dark Mode:**
-    - Click the moon icon to switch to Dark Mode.
-    - Click the sun icon to revert to Light Mode.
+1. Open the application in your web browser.
+2. Customize the password settings:
+   - Adjust the length of the password.
+   - Select the character types to include (uppercase, lowercase, numbers, symbols).
+3. Click the "Generate Password" button to create a new password.
+4. Copy the generated password and use it as needed.
 
 ## Contributing
 
-Contributions are welcome! To contribute to the Password Generator project, please follow these guidelines:
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. **Fork the Repository:**
-    - Click the **"Fork"** button at the top right corner of the repository page to create a personal copy of the project.
+To contribute:
 
-2. **Clone Your Fork:**
-    ```bash
-    git clone https://github.com/your-username/Password-Generator.git
-    ```
-3. **Navigate to the Project Directory:**
-    ```bash
-    cd Password-Generator
-    ```
-4. **Create a New Branch:**
-    - Use a descriptive name for your branch related to the feature or fix you're implementing.
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-5. **Implement Your Changes:**
-    - Make your desired changes or additions in your local environment.
-
-6. **Commit Your Changes:**
-    ```bash
-    git add .
-    git commit -m "Add [description of your changes]"
-    ```
-
-7. **Push to Your Fork:**
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-
-8. **Create a Pull Request:**
-    - Navigate to your fork on GitHub.
-    - Click the **"Compare & pull request"** button.
-    - Provide a clear and concise description of your changes.
-    - Submit the pull request for review.
-
-**Please Ensure That:**
-- Your code adheres to the existing code style and best practices.
-- You have thoroughly tested your changes.
-- You have updated the documentation if your changes affect it.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
 
----
+## Screenshots
+
+Here are some screenshots of the application:
+
+![Home Page](path/to/screenshot1.png)
+*Home Page*
+
+![Password Generation](path/to/screenshot2.png)
+*Password Generation in Action*
+
+## Contact
+
+Alok DevForge - [@alok_devforge](https://twitter.com/alok_devforge) - alok.csit@gmail.com
+
+Project Link: [https://github.com/alok-devforge/PasswordGenerator](https://github.com/alok-devforge/PasswordGenerator)
