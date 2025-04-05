@@ -83,6 +83,6 @@ Here are some screenshots of the application:
 
 ## Contact
 
-Alok DevForge - [@alok_devforge](https://twitter.com/alok_devforge) - alok.csit@gmail.com
+Alok DevForge - [@alok_cst](https://www.instagram.com/alok_cst/) - alok.csit@gmail.com
 
 Project Link: [https://github.com/alok-devforge/PasswordGenerator](https://github.com/alok-devforge/PasswordGenerator)
