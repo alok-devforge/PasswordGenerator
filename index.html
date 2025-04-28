@@ -5,61 +5,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <!-- Link to the combined styles.css -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#4f46e5',
+                            dark: '#3730a3',
+                            light: '#818cf8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="shortcut icon" href="logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <h1 id="main-heading">Password Generator<br><span>Secure • Simple • Swift</span></h1>
-        <p id="pass-el" aria-live="polite" aria-atomic="true"></p>
-        <button id="copy-button" class="copy-button" style="display: none;" aria-label="Copy Password">
-            <i class="fas fa-copy"></i> Copy Password
-        </button>
-        <div id="strength-indicator" aria-label="Password Strength">
-            <div id="strength-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-            <span id="strength-text">Strength: </span>
-        </div>
-        <div class="controls">
-            <div class="options">
-                <div class="toggle-group">
-                    <span class="toggle-label">Uppercase</span>
-                    <button class="toggle-button active" id="toggleUpper"></button>
-                </div>
-                <div class="toggle-group">
-                    <span class="toggle-label">Lowercase</span>
-                    <button class="toggle-button active" id="toggleLower"></button>
-                </div>
-                <div class="toggle-group">
-                    <span class="toggle-label">Numbers</span>
-                    <button class="toggle-button active" id="toggleNumbers"></button>
-                </div>
-                <div class="toggle-group">
-                    <span class="toggle-label">Symbols</span>
-                    <button class="toggle-button active" id="toggleSymbols"></button>
-                </div>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-['Inter'] min-h-screen flex items-center justify-center px-4 py-6">
+    <div class="w-full max-w-md bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        <!-- Header -->
+        <header class="relative flex items-center justify-center p-4 border-b border-gray-200 dark:border-gray-700">
+            <div class="absolute left-4">
+                <img src="logo.svg" alt="Password Generator Logo" class="h-6 w-auto">
             </div>
-            <div class="length-control">
-                <label for="lengthInput">Length:</label>
-                <input id="lengthInput" type="range" min="4" max="30" value="15" />
-                <span id="length-value">15</span>
-            </div>
-            <!-- Moved Dark Mode toggle-group to center -->
-            <div class="toggle-group centered">
-                <span class="toggle-label">Dark Mode</span>
-                <button class="toggle-button" id="toggleMode"></button>
+            <h1 class="text-xl font-semibold">Password Generator</h1>
+            <button id="theme-toggle" class="absolute right-4 p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon text-base"></i>
+            </button>
+        </header>
+
+        <!-- Password Display -->
+        <div class="p-4">
+            <div id="pass-el" aria-live="polite" aria-atomic="true" class="min-h-16 flex items-center justify-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-center break-all font-mono text-lg"></div>
+            
+            <div class="mt-3 flex justify-end gap-2">
+                <button id="copy-button" class="text-primary-DEFAULT dark:text-primary-light hover:text-primary-dark flex items-center gap-1 p-1 hidden">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+                <button id="refresh-button" class="text-primary-DEFAULT dark:text-primary-light hover:text-primary-dark flex items-center gap-1 p-1 hidden">
+                    <i class="fas fa-sync-alt"></i> New
+                </button>
             </div>
         </div>
-        <button id="generate-button" aria-label="Generate Password">
-            <i class="fas fa-key"></i> Generate Password
-        </button>
+
+        <!-- Strength Indicator -->
+        <div id="strength-indicator" class="px-4 pb-4" aria-label="Password Strength">
+            <div class="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden mb-1">
+                <div id="strength-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="h-full rounded-full w-0 transition-all duration-500"></div>
+            </div>
+            <span id="strength-text" class="text-xs text-gray-500 dark:text-gray-400 text-center block">Select options below</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+            <!-- Character Options -->
+            <div class="mb-4">
+                <h2 class="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Character Types</h2>
+                <div class="grid grid-cols-2 gap-y-2 gap-x-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Uppercase (A-Z)</span>
+                        <button class="toggle-button w-10 h-5 bg-gray-200 dark:bg-gray-600 rounded-full cursor-pointer relative active" id="toggleUpper" aria-pressed="true"></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Lowercase (a-z)</span>
+                        <button class="toggle-button w-10 h-5 bg-gray-200 dark:bg-gray-600 rounded-full cursor-pointer relative active" id="toggleLower" aria-pressed="true"></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Numbers (0-9)</span>
+                        <button class="toggle-button w-10 h-5 bg-gray-200 dark:bg-gray-600 rounded-full cursor-pointer relative active" id="toggleNumbers" aria-pressed="true"></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Symbols (!@#$)</span>
+                        <button class="toggle-button w-10 h-5 bg-gray-200 dark:bg-gray-600 rounded-full cursor-pointer relative active" id="toggleSymbols" aria-pressed="true"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password Length -->
+            <div class="mb-4">
+                <div class="flex items-center justify-between mb-1">
+                    <h2 class="text-sm font-medium text-gray-700 dark:text-gray-300">Password Length</h2>
+                    <span id="length-value" class="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-sm font-medium">16</span>
+                </div>
+                <input id="lengthInput" type="range" min="4" max="32" value="16" class="w-full h-1 bg-gray-200 dark:bg-gray-600 rounded-full appearance-none cursor-pointer" aria-label="Password Length" />
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generate-button" class="w-full bg-[#4f46e5] hover:bg-[#3730a3] dark:bg-[#818cf8] dark:hover:bg-[#6366f1] text-white py-3 px-4 rounded-md font-medium transition-colors flex items-center justify-center gap-2 shadow-sm">
+                <i class="fas fa-key"></i> Generate Password
+            </button>
+            
+            <!-- Password History -->
+            <div class="mt-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h2 class="text-sm font-medium text-gray-700 dark:text-gray-300">Password History</h2>
+                    <button id="clear-history" class="text-xs text-primary-DEFAULT dark:text-primary-light hover:underline">Clear</button>
+                </div>
+                <div id="password-history" class="max-h-32 overflow-y-auto text-sm"></div>
+            </div>
+        </div>
     </div>
-    <div id="notification-container"></div>
+    
+    <div id="notification-container" class="fixed top-5 left-1/2 -translate-x-1/2 z-50"></div>
+    
+    <style>
+        .toggle-button {
+            transition: background-color 0.2s;
+        }
+        .toggle-button::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background-color: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.2s;
+        }
+        .toggle-button.active {
+            background-color: #4f46e5;
+        }
+        .dark .toggle-button.active {
+            background-color: #818cf8;
+        }
+        .toggle-button.active::before {
+            transform: translateX(20px);
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+            10% { opacity: 1; transform: translateY(0) translateX(-50%); }
+            90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+            100% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+        }
+        .custom-notification {
+            animation: fadeInOut 2s forwards;
+        }
+    </style>
     <script src="script.js" defer></script>
 </body>
 </html>
