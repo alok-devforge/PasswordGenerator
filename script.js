@@ -149,24 +149,24 @@ function updateStrengthIndicator(strength) {
 
 // Display notification
 function showNotification(message, duration) {
-  const notificationContainer = document.getElementById(
-    "notification-container"
-  );
+  const notificationContainer = document.getElementById("notification-container");
   const notification = document.createElement("div");
   notification.textContent = message;
   notification.classList.add(
-    "custom-notification",
-    "py-2",
-    "px-4",
-    "rounded-md",
+    "custom-notification", 
+    "py-2", 
+    "px-4", 
+    "rounded-md", 
     "shadow-md",
-    "text-center",
+    "text-center", 
     "text-sm",
     "bg-white",
     "dark:bg-gray-800",
     "border",
     "border-gray-200",
-    "dark:border-gray-700"
+    "dark:border-gray-700",
+    "max-w-xs",
+    "mx-auto"
   );
 
   notificationContainer.appendChild(notification);

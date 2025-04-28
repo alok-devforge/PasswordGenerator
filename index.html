@@ -113,7 +113,8 @@
         </div>
     </div>
     
-    <div id="notification-container" class="fixed top-5 left-1/2 -translate-x-1/2 z-50"></div>
+    <!-- Updated notification container with better positioning -->
+    <div id="notification-container" class="fixed top-5 left-0 right-0 flex justify-center items-center z-50 pointer-events-none"></div>
     
     <style>
         .toggle-button {
@@ -140,10 +141,10 @@
             transform: translateX(20px);
         }
         @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
-            10% { opacity: 1; transform: translateY(0) translateX(-50%); }
-            90% { opacity: 1; transform: translateY(0) translateX(-50%); }
-            100% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+            0% { opacity: 0; transform: translateY(-10px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
         }
         .custom-notification {
             animation: fadeInOut 2s forwards;
