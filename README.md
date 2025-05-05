@@ -59,7 +59,7 @@ git clone https://github.com/alok-devforge/PasswordGenerator.git
 ## :compass: How to Use
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/60989441-b8a4-460d-9f28-55ceb51b69f3" alt="Password Generator Interface" width="500px"/>
+<img src="https://github.com/user-attachments/assets/4f078c50-ecd4-4986-b720-4db8cf9db79d" alt="Password Generator Interface" width="500px"/>
 </div>
 
 <div align="center">
