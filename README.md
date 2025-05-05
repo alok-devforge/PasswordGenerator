@@ -46,7 +46,7 @@ In today's digital world, weak passwords are the #1 security vulnerability. Our 
 This is a standalone web application that runs entirely in your browser.
 
 #### Option 1: Live Demo
-▶️ [Try it now on GitHub Pages](#) (Add your GitHub Pages link when available)
+▶️ [Try it now on GitHub Pages](https://alok-devforge.github.io/PasswordGenerator/)
 
 #### Option 2: Run Locally
 ```bash
@@ -116,7 +116,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-### Made with ❤️ by [Alok](https://github.com/alok-devforge)
+### Made with ❤️ by [alok-devforge](https://github.com/alok-devforge)
 
 <p>If you found this project helpful, consider giving it a ⭐️ on GitHub!</p>
 <p>Last updated: 2025-04-28 17:06:05</p>
